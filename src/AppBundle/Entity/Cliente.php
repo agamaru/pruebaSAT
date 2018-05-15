@@ -52,4 +52,96 @@ class Cliente
      * @var string
      */
     private $email;
+
+    /// Getters y Setters
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return Cliente
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNombreCliente()
+    {
+        return $this->nombreCliente;
+    }
+
+    /**
+     * @param string $nombreCliente
+     * @return Cliente
+     */
+    public function setNombreCliente($nombreCliente)
+    {
+        $this->nombreCliente = $nombreCliente;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDireccion()
+    {
+        return $this->direccion;
+    }
+
+    /**
+     * @param string $direccion
+     * @return Cliente
+     */
+    public function setDireccion($direccion)
+    {
+        $this->direccion = $direccion;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * @param string $telefono
+     * @return Cliente
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return Cliente
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
 }
