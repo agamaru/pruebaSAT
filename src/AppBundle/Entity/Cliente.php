@@ -64,16 +64,6 @@ class Cliente
     }
 
     /**
-     * @param int $id
-     * @return Cliente
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getNombreCliente()
