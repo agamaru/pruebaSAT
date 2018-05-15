@@ -20,26 +20,36 @@ class Cliente
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
+     *
+     * @var int
      */
     private $id;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     private $nombreCliente;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     private $direccion;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     private $telefono;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     private $email;
 }
