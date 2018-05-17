@@ -1,0 +1,6 @@
+AppBundle\Entity\Cliente:
+    cliente_{1..25}:
+      nombreCliente: <es_ES:firstName()>
+      direccion: <es_ES:streetAddress()>
+      telefono: <es_ES:phoneNumber()>
+      email: <es_ES:email()>
