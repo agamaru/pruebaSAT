@@ -4,3 +4,12 @@ AppBundle\Entity\Cliente:
       direccion: <es_ES:streetAddress()>
       telefono: <es_ES:phoneNumber()>
       email: <es_ES:email()>
+
+AppBundle\Entity\ConfiRed:
+    confired_{1..15}:
+      dominio: <domainName()>
+      mascaraRed: <randomElement($array = array('255.0.0.0', '255.255.0.0', '255.255.255.0'))>
+      ipFijaExt: <ipv4()>
+      dns1: dns1
+      dns2: '25%? dns2'
+      cliente: nombreCliente
