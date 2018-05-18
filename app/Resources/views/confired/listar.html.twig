@@ -14,6 +14,7 @@
                 <th>IP fija externa</th>
                 <th>DNS1</th>
                 <th>DNS2</th>
+                <th>Cliente</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
                 <td>{{ confi.ipFijaExt }}</td>
                 <td>{{ confi.dns1 }}</td>
                 <td>{% if confi.dns2 %}{{ confi.dns2 }}{% endif %}</td>
+                <th>{{ confi.cliente }}</th>
             </tr>
             {% endfor %}
         </tbody>

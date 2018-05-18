@@ -12,4 +12,4 @@ AppBundle\Entity\ConfiRed:
       ipFijaExt: <ipv4()>
       dns1: dns1
       dns2: '25%? dns2'
-      cliente: nombreCliente
+      cliente: '@cliente*'

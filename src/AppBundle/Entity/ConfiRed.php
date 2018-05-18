@@ -62,9 +62,10 @@ class ConfiRed
     private $dns2;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="Cliente")
+     * @ORM\JoinColumn(nullable=false)
      *
-     * @var string
+     * @var Cliente
      */
     private $cliente;
 
@@ -169,7 +170,7 @@ class ConfiRed
     }
 
     /**
-     * @return string
+     * @return Cliente
      */
     public function getCliente()
     {

@@ -53,6 +53,11 @@ class Cliente
      */
     private $email;
 
+    public function __toString()
+    {
+        return $this->getNombreCliente();
+    }
+
     /// Getters y Setters
 
     /**
