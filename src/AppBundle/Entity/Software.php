@@ -70,12 +70,12 @@ class Software
     private $tipo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Cliente")
+     * @ORM\ManyToOne(targetEntity="Empresa")
      * @ORM\JoinColumn(nullable=false)
      *
-     * @var Cliente
+     * @var Empresa
      */
-    private $cliente;
+    private $empresa;
 
     /// Getters y setters
 
@@ -196,20 +196,20 @@ class Software
     }
 
     /**
-     * @return Cliente
+     * @return Empresa
      */
-    public function getCliente()
+    public function getEmpresa()
     {
-        return $this->cliente;
+        return $this->empresa;
     }
 
     /**
-     * @param Cliente $cliente
+     * @param Empresa $empresa
      * @return Software
      */
-    public function setCliente($cliente)
+    public function setEmpresa($empresa)
     {
-        $this->cliente = $cliente;
+        $this->empresa = $empresa;
         return $this;
     }
 

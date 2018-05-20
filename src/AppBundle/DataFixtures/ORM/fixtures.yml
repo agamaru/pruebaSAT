@@ -22,7 +22,7 @@ AppBundle\Entity\Software:
       notas: <paragraph()>
       fechaRenovacion: '<dateTimeBetween("-1 year", "+1 year")>'
       tipo: '@tipo*'
-      cliente: '@cliente*'
+      empresa: '@empresa*'
 
 AppBundle\Entity\Tipo:
     tipo_{1..5}:
