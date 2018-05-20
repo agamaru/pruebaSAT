@@ -62,12 +62,12 @@ class ConfiRed
     private $dns2;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Cliente")
+     * @ORM\ManyToOne(targetEntity="Empresa")
      * @ORM\JoinColumn(nullable=false)
      *
-     * @var Cliente
+     * @var Empresa
      */
-    private $cliente;
+    private $empresa;
 
     /// Getters y setters
 
@@ -170,20 +170,20 @@ class ConfiRed
     }
 
     /**
-     * @return Cliente
+     * @return Empresa
      */
-    public function getCliente()
+    public function getEmpresa()
     {
-        return $this->cliente;
+        return $this->empresa;
     }
 
     /**
-     * @param Cliente $cliente
+     * @param Empresa $empresa
      * @return ConfiRed
      */
-    public function setCliente($cliente)
+    public function setEmpresa($empresa)
     {
-        $this->cliente = $cliente;
+        $this->empresa = $empresa;
         return $this;
     }
 
