@@ -27,7 +27,7 @@
                 <td>{{ software.tipo }}</td>
                 <td>{{ software.fechaRenovacion|date('d/m/Y') }}</td>
                 <td>{% if software.notas %} {{ software.notas }} {% endif %}</td>
-                <td>cliente</td>
+                <td>{{ software.cliente }}</td>
             </tr>
             {% endfor %}
         </tbody>
