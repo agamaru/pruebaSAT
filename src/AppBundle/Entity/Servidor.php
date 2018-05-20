@@ -47,6 +47,14 @@ class Servidor
      */
     private $detalles;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumn(nullable=false)
+     *
+     * @var Empresa
+     */
+    private $empresa;
+
     /// Getters y setters
 
     /**
@@ -108,6 +116,24 @@ class Servidor
     public function setDetalles($detalles)
     {
         $this->detalles = $detalles;
+        return $this;
+    }
+
+    /**
+     * @return Empresa
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
+
+    /**
+     * @param Empresa $empresa
+     * @return Servidor
+     */
+    public function setEmpresa($empresa)
+    {
+        $this->empresa = $empresa;
         return $this;
     }
 

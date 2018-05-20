@@ -46,4 +46,5 @@ AppBundle\Entity\Servidor:
       nombre: <word()>
       ip: <ipv4()>
       detalles: <paragraph()>
+      empresa: '@empresa*'
 
