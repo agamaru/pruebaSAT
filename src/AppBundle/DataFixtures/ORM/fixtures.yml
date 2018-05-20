@@ -13,3 +13,12 @@ AppBundle\Entity\ConfiRed:
       dns1: dns1
       dns2: '25%? dns2'
       cliente: '@cliente*'
+
+AppBundle\Entity\Software:
+    software_{1..15}:
+      nombre: <word()>
+      usuario: <es_ES:username()>
+      password: <word()>
+      notas: <paragraph()>
+      fechaRenovacion: '<dateTimeBetween("-1 year", "+1 year")>'
+      tipo: <word()>

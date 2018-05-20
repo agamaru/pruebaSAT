@@ -14,8 +14,8 @@
                 <li class="nav-item {% if app.request.attributes.get('_route') starts with 'confired' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('confired_listar') }}">ConfiRedes</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Enlace3</a>
+                <li class="nav-item {% if app.request.attributes.get('_route') starts with 'software' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('software_listar') }}">Softwares</a>
                 </li>
             </ul>
             <span class="navbar-text">
