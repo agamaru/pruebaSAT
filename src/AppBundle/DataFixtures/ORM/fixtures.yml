@@ -48,3 +48,11 @@ AppBundle\Entity\Servidor:
       detalles: <paragraph()>
       empresa: '@empresa*'
 
+AppBundle\Entity\Usuario:
+    usuario_{1..20}:
+      nombreUsuario: <es_ES:userName()>
+      password: <password()>
+      admin: <boolean(25)>
+      tecnico: <boolean(25)>
+      servidor: '@servidor*'
+

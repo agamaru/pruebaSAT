@@ -55,6 +55,11 @@ class Servidor
      */
     private $empresa;
 
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
+
     /// Getters y setters
 
     /**
