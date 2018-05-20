@@ -11,6 +11,9 @@
                 <li class="nav-item {% if app.request.attributes.get('_route') starts with 'cliente' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('cliente_listar') }}">Clientes <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item {% if app.request.attributes.get('_route') starts with 'empresa' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('empresa_listar') }}">Empresas <span class="sr-only">(current)</span></a>
+                </li>
                 <li class="nav-item {% if app.request.attributes.get('_route') starts with 'confired' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('confired_listar') }}">ConfiRedes</a>
                 </li>
