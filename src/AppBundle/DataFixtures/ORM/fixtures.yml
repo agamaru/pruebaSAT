@@ -41,3 +41,9 @@ AppBundle\Entity\Empresa:
       nombre (unique): <es_ES:company()>
       cif (unique): <regexify('[ABCDEFGHJKLMNPQRSUVW]\d{7}[0-9A-J]')>
 
+AppBundle\Entity\Servidor:
+    servidor_{1..15}:
+      nombre: <word()>
+      ip: <ipv4()>
+      detalles: <paragraph()>
+
