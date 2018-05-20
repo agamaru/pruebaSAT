@@ -54,6 +54,14 @@ class Router
      */
     private $wep;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumn(nullable=false)
+     *
+     * @var Empresa
+     */
+    private $empresa;
+
     /// Getters y setters
 
     /**
@@ -133,6 +141,24 @@ class Router
     public function setWep($wep)
     {
         $this->wep = $wep;
+        return $this;
+    }
+
+    /**
+     * @return Empresa
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
+
+    /**
+     * @param Empresa $empresa
+     * @return Router
+     */
+    public function setEmpresa($empresa)
+    {
+        $this->empresa = $empresa;
         return $this;
     }
 

@@ -40,6 +40,11 @@ class Empresa
      */
     private $cif;
 
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
+
     /// Getters y setters
 
     /**

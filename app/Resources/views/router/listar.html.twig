@@ -13,8 +13,8 @@
                 <th>Usuario</th>
                 <th>Contraseña</th>
                 <th>WEP</th>
-                <!--<th>Puntos de acceso</th>
-                <th>Cliente</th>-->
+                <!--<th>Puntos de acceso</th>-->
+                <th>Empresa</th>
             </tr>
         </thead>
         <tbody>
@@ -25,11 +25,12 @@
                 <td>{{ router.password }}</td>
                 <td>{{ router.wep }}</td>
 
+                <td>{{ router.empresa }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
     {% else %}
-        <p>No hay softwares que mostrar</p>
+        <p>No hay routers que mostrar</p>
     {% endif %}
 {% endblock %}
