@@ -34,3 +34,9 @@ AppBundle\Entity\Router:
       usuario: <userName()>
       password: <password()>
       wep: <word()>
+
+AppBundle\Entity\Empresa:
+    empresa_{1..25}:
+      nombre (unique): <es_ES:company()>
+      cif (unique): <regexify('[ABCDEFGHJKLMNPQRSUVW]\d{7}[0-9A-J]')>
+
