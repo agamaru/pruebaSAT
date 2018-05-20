@@ -178,7 +178,7 @@ class ConfiRed
     }
 
     /**
-     * @param string $cliente
+     * @param Cliente $cliente
      * @return ConfiRed
      */
     public function setCliente($cliente)

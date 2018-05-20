@@ -62,11 +62,20 @@ class Software
     private $notas;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="Tipo")
+     * @ORM\JoinColumn(nullable=false)
      *
-     * @var string
+     * @var Tipo
      */
     private $tipo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Cliente")
+     * @ORM\JoinColumn(nullable=false)
+     *
+     * @var Cliente
+     */
+    private $cliente;
 
     /// Getters y setters
 
@@ -169,7 +178,7 @@ class Software
     }
 
     /**
-     * @return string
+     * @return Tipo
      */
     public function getTipo()
     {
@@ -177,12 +186,30 @@ class Software
     }
 
     /**
-     * @param string $tipo
+     * @param Tipo $tipo
      * @return Software
      */
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
+        return $this;
+    }
+
+    /**
+     * @return Cliente
+     */
+    public function getCliente()
+    {
+        return $this->cliente;
+    }
+
+    /**
+     * @param Cliente $cliente
+     * @return Software
+     */
+    public function setCliente($cliente)
+    {
+        $this->cliente = $cliente;
         return $this;
     }
 
