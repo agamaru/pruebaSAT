@@ -56,3 +56,11 @@ AppBundle\Entity\Usuario:
       tecnico: <boolean(25)>
       servidor: '@servidor*'
 
+AppBundle\Entity\PuntoAcceso:
+    puntoacceso_{1..20}:
+      ip: <ipv4()>
+      usuario: <es_ES:userName()>
+      password: <password()>
+      wep: <word()>
+      router: '@router*'
+

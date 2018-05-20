@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: elsiore
  * Date: 20/05/18
- * Time: 9:54
+ * Time: 19:34
  */
 
 namespace AppBundle\Entity;
@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="router")
+ * @ORM\Table(name="punto_acceso")
  */
-class Router
+class PuntoAcceso
 {
     /**
      * @ORM\Id
@@ -55,17 +55,13 @@ class Router
     private $wep;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\ManyToOne(targetEntity="Router")
      * @ORM\JoinColumn(nullable=false)
      *
-     * @var Empresa
+     * @var Router
      */
-    private $empresa;
+    private $router;
 
-    public function __toString()
-    {
-        return $this->getIp();
-    }
 
     /// Getters y setters
 
@@ -87,7 +83,7 @@ class Router
 
     /**
      * @param string $ip
-     * @return Router
+     * @return PuntoAcceso
      */
     public function setIp($ip)
     {
@@ -105,7 +101,7 @@ class Router
 
     /**
      * @param string $usuario
-     * @return Router
+     * @return PuntoAcceso
      */
     public function setUsuario($usuario)
     {
@@ -123,7 +119,7 @@ class Router
 
     /**
      * @param string $password
-     * @return Router
+     * @return PuntoAcceso
      */
     public function setPassword($password)
     {
@@ -141,7 +137,7 @@ class Router
 
     /**
      * @param string $wep
-     * @return Router
+     * @return PuntoAcceso
      */
     public function setWep($wep)
     {
@@ -150,21 +146,20 @@ class Router
     }
 
     /**
-     * @return Empresa
+     * @return Router
      */
-    public function getEmpresa()
+    public function getRouter()
     {
-        return $this->empresa;
+        return $this->router;
     }
 
     /**
-     * @param Empresa $empresa
-     * @return Router
+     * @param Router $router
+     * @return PuntoAcceso
      */
-    public function setEmpresa($empresa)
+    public function setRouter($router)
     {
-        $this->empresa = $empresa;
+        $this->router = $router;
         return $this;
     }
-
 }
