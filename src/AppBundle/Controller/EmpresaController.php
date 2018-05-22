@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Empresa;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -16,6 +17,19 @@ class EmpresaController extends Controller
 
         return $this->render('empresa/listar.html.twig', [
             'empresas' => $empresas
+        ]);
+    }
+
+    /**
+     * @Route("/empresa/servicios/{id}", name="empresa_servicios_mostrar")
+     */
+    public function MostrarAction(Empresa $empresa)
+    {
+        $softwares = $this->getDoctrine()->getRepository('AppBundle:Software')->findByEmpresa($empresa);
+
+        return $this->render('empresa/mostrar.html.twig', [
+            'empresa' => $empresa,
+            'softwares' => $softwares
         ]);
     }
 }
