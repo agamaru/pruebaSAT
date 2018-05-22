@@ -31,11 +31,14 @@ class EmpresaController extends Controller
 
         $routers = $this->getDoctrine()->getRepository('AppBundle:Router')->findByEmpresa($empresa);
 
+        $servidores = $this->getDoctrine()->getRepository('AppBundle:Servidor')->findByEmpresa($empresa);
+
         return $this->render('empresa/mostrar.html.twig', [
             'empresa' => $empresa,
             'softwares' => $softwares,
             'confiRedes' => $confiRedes,
-            'routers' => $routers
+            'routers' => $routers,
+            'servidores' => $servidores
         ]);
     }
 }

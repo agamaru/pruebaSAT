@@ -30,4 +30,12 @@
     {% else %}
         <p>No dispone de routers.</p>
     {% endif %}
+
+    {% if servidores is not empty %}
+        {% for servidor in servidores %}
+            <p><strong>Nombre del servidor: </strong>{{ servidor.nombre }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No dispone de servidores.</p>
+    {% endif %}
 {% endblock %}
