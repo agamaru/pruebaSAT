@@ -27,9 +27,12 @@ class EmpresaController extends Controller
     {
         $softwares = $this->getDoctrine()->getRepository('AppBundle:Software')->findByEmpresa($empresa);
 
+        $confiRedes = $this->getDoctrine()->getRepository('AppBundle:ConfiRed')->findByEmpresa($empresa);
+
         return $this->render('empresa/mostrar.html.twig', [
             'empresa' => $empresa,
-            'softwares' => $softwares
+            'softwares' => $softwares,
+            'confiRedes' => $confiRedes
         ]);
     }
 }

@@ -14,4 +14,12 @@
     {% else %}
         <p>No dispone de softwares instalados.</p>
     {% endif %}
+
+    {% if confiRedes is not empty %}
+        {% for confiRed in confiRedes %}
+            <p><strong>Dominio: </strong>{{ confiRed.dominio }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No dispone de configuraciones de red.</p>
+    {% endif %}
 {% endblock %}
