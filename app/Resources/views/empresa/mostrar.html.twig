@@ -22,4 +22,12 @@
     {% else %}
         <p>No dispone de configuraciones de red.</p>
     {% endif %}
+
+    {% if routers is not empty %}
+        {% for router in routers %}
+            <p><strong>IP del router: </strong>{{ router.ip }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No dispone de routers.</p>
+    {% endif %}
 {% endblock %}
