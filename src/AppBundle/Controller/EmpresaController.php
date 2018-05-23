@@ -3,8 +3,10 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Empresa;
+use AppBundle\Form\Type\EmpresaType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class EmpresaController extends Controller
 {
@@ -39,6 +41,27 @@ class EmpresaController extends Controller
             'confiRedes' => $confiRedes,
             'routers' => $routers,
             'servidores' => $servidores
+        ]);
+    }
+
+    /**
+     * @Route("/empresa/prueba/{id}", name="empresa_probar")
+     */
+    public function probarAction(Request $request, Empresa $empresa)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(EmpresaType::class, $empresa);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->flush();
+        }
+
+        return $this->render('empresa/form.html.twig', [
+            'empresa' => $empresa,
+            'formulario' => $form->createView()
         ]);
     }
 }
