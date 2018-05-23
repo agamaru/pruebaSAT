@@ -56,7 +56,45 @@ class EmpresaController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em->flush();
+            try {
+                $em->flush();
+                $this->addFlash('info', 'Cambios realizados');
+                return $this->redirectToRoute('empresa_listar');
+            }
+            catch (\Exception $e) {
+                $this->addFlash('error', 'No se han podido guardar los cambios');
+            }
+        }
+
+        return $this->render('empresa/form.html.twig', [
+            'empresa' => $empresa,
+            'formulario' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/empresa/nueva", name="empresa_nueva")
+     */
+    public function nuevaAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $empresa = new Empresa();
+        $em->persist($empresa);
+
+        $form = $this->createForm(EmpresaType::class, $empresa);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            try {
+                $em->flush();
+                $this->addFlash('info', 'Cambios realizados');
+                return $this->redirectToRoute('empresa_listar');
+            }
+            catch (\Exception $e) {
+                $this->addFlash('error', 'No se han podido guardar los cambios');
+            }
         }
 
         return $this->render('empresa/form.html.twig', [

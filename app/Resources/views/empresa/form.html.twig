@@ -5,7 +5,8 @@
 {% block title %}Empresa{% endblock %}
 
 {% block content %}
-    <h1>Dar de alta una nueva empresa</h1>
+    <h1>{{ empresa.id ? empresa.nombre : 'Nueva empresa' }}</h1>
+    {# Pendiente solucionar el tema del encabezado #}
 
     {{ form_start(formulario) }}
     {{ form_widget(formulario) }}
