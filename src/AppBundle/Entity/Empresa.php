@@ -10,6 +10,7 @@ namespace AppBundle\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -28,6 +29,11 @@ class Empresa
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\Length(
+     *     min = 3,
+     *     minMessage = "El nombre debe tener al menos {{ limit }} caracteres"
+     * )
+     * @Assert\NotNull()
      *
      * @var string
      */
@@ -35,6 +41,10 @@ class Empresa
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\Regex(
+     *     pattern = "/^([ABCDEFGHJKLMNPQRSUVW])(\d{7})([0-9A-J])$/",
+     *     message = "El cif introducido no tiene el formato adecuado"
+     * )
      *
      * @var string
      */
